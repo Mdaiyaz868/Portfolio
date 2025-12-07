@@ -1,0 +1,251 @@
+/* Publications Section Styles */
+.publications {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.publications .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.publications .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.publications-container {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.publication-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 5px solid #e74c3c;
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.publication-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(231, 76, 60, 0.2);
+  border-left-color: #c0392b;
+}
+
+.publication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  gap: 1rem;
+}
+
+.publication-header h3 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.publication-date {
+  color: #95a5a6;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.publication-details {
+  position: relative;
+  z-index: 1;
+}
+
+.journal {
+  color: #34495e;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.journal strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.publication-metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metadata-item .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-item .value {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.highlights li {
+  padding: 0.8rem 0 0.8rem 2rem;
+  position: relative;
+  color: #34495e;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.highlights li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.publication-link {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.read-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.read-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publications {
+    padding: 3.5rem 0;
+  }
+
+  .publications .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .publication-header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .publication-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .publication-date {
+    align-self: flex-start;
+  }
+
+  .publication-metadata {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications {
+    padding: 2.5rem 0;
+  }
+
+  .publications .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .publication-card {
+    padding: 1.5rem;
+  }
+
+  .publication-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .journal {
+    font-size: 0.9rem;
+  }
+
+  .metadata-item .value {
+    font-size: 0.9rem;
+  }
+
+  .highlights li {
+    padding-left: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .read-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
